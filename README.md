@@ -28,6 +28,30 @@
 
 你不需要一開始就學 git、CLI，或複雜設定。
 
+## 安裝與設定
+
+### 1. 安裝 Claude Desktop App
+
+先在 Mac 上安裝 Claude Desktop App，並登入可用的工作帳號。
+
+### 2. 用 Claude Chat 協助安裝 GitHub `gh` CLI 與設定帳號
+
+如果你不熟悉終端機，可以直接在 Claude Chat 輸入：
+
+> 幫我一步一步安裝 GitHub `gh` CLI，並完成 GitHub 帳號登入。請用 Mac 的做法說明，每一步都寫得簡單一點。
+
+完成後，確認你能在終端機執行 `gh --version`，以及可以順利登入 GitHub。
+
+### 3. 用 Claude Chat 協助 clone 這個 repository，並設定成 Claude cowork project root
+
+接著請 Claude Chat 指導你把這個 repo clone 到 Mac 上，並把它設定成 Claude cowork 的專案根目錄。
+
+你可以直接貼：
+
+> 請幫我把這個 GitHub repository clone 到 Mac，並把它設定成 Claude cowork project root folder。請一步一步教我操作。
+
+完成後，確保你可以在這個資料夾中看到 `raw/`、`wiki/`、`index.md` 和 `log.md`。
+
 ## 目錄結構
 
 - `raw/`
@@ -46,6 +70,49 @@
   說明這個 repo 的分層與 source of truth。
 - `LICENSE`
   開源授權文件。
+
+## 使用指南
+
+### 1. 匯入 Google Drive 業務文件
+
+把 Google Drive 裡跟業務相關的文件，先整理成可讀的素材，再放進 `raw/inbox/` 或 `raw/sources/`。
+
+適合匯入的內容包括：
+
+- 專案說明
+- 會議紀錄
+- 客戶簡報
+- 需求文件
+- 重要截圖
+
+### 2. 請 Claude 整理成知識庫內容
+
+你可以請 Claude 做這幾件事：
+
+- 摘要重點
+- 找出關鍵名詞
+- 整理問題與答案
+- 比較相似文件的差異
+- 找出值得保留到 `wiki/` 的內容
+
+整理好的結果，請存成 Markdown 放進 `wiki/`。
+
+### 3. 更新 index 與 log
+
+每次新增重要內容後，簡短更新：
+
+- `index.md`：這個知識庫現在有哪些主題
+- `log.md`：這次新增或修改了什麼
+
+### 4. 用測試提示詞體驗查詢功能
+
+當你已經匯入一些文件後，可以用這些提示詞測試 cowork 與知識庫查詢效果：
+
+- `請幫我整理這些業務文件，說明目前最重要的三個重點。`
+- `這些文件裡有沒有提到待辦事項、負責人、截止日？`
+- `如果我要向主管報告，請幫我濃縮成 5 句話。`
+- `這些文件之間有沒有重複、衝突或缺漏？`
+- `根據目前資料，下一步我應該先問什麼問題？`
 
 ## 快速開始
 
