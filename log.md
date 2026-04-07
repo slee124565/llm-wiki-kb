@@ -1,0 +1,4 @@
+# Log
+
+- 2026-04-07: repository scaffold created
+
