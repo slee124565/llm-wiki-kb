@@ -31,21 +31,27 @@
 ## 目錄結構
 
 - `raw/`
-  放原始素材。
+  放原始素材，分成 `inbox/`、`sources/`、`assets/`。
 - `wiki/`
-  放整理過的知識頁。
+  放整理過的知識頁，現在先以 `README.md` 和 `_template.md` 作為基礎。
 - `index.md`
   簡短列出有哪些主題。
 - `log.md`
   簡短記錄哪些內容有變動。
 - `docs/`
   放穩定的使用說明。
+- `CLAUDE.md`
+  給 Claude Code 的操作規則。
+- `ARCHITECTURE.md`
+  說明這個 repo 的分層與 source of truth。
+- `LICENSE`
+  開源授權文件。
 
 ## 快速開始
 
 1. 先把一份素材放進 `raw/inbox/` 或 `raw/sources/`。
 2. 打開 Claude App，請它整理重點和後續問題。
-3. 把結果存成 Markdown 頁面，放進 `wiki/cards/` 或 `wiki/maps/`。
+3. 把結果存成 Markdown 頁面，放進 `wiki/`。
 4. 在 `index.md` 和 `log.md` 各補一行。
 
 ## 閱讀順序

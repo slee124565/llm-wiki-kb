@@ -23,10 +23,10 @@ Sources are read by the agent but not rewritten in place.
 
 `wiki/` contains the compiled knowledge base:
 
-- `wiki/cards/`
-  atomic knowledge pages
-- `wiki/maps/`
-  topic-level navigation pages
+- `wiki/README.md`
+  wiki-level orientation
+- `wiki/_template.md`
+  starter template for new compiled pages
 
 The wiki is the agent-owned compiled layer. It should reflect synthesis, not raw capture.
 
@@ -71,4 +71,3 @@ If a rule becomes stable enough to survive multiple sessions, it belongs in `doc
 - Compiled understanding lives in `wiki/`.
 - Navigation lives in `index.md`.
 - History lives in `log.md`.
-
