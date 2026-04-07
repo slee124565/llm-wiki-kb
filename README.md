@@ -1,54 +1,54 @@
 # llm-wiki-kb
 
-An easy-start knowledge base for non-engineers who want to use Claude App on Mac to build a personal or team wiki.
+一個給非工程同仁使用的入門知識庫，適合在 Mac 上搭配 Claude App 建立個人或團隊 wiki。
 
-## What This Repo Is For
+## 這個 Repo 用來做什麼
 
-Use this repo when you want to turn work material into something you can find again, reuse, and keep improving:
+當你想把工作素材變成之後還找得到、還能重用、還能持續改進的內容時，就可以用這個 repo：
 
-- articles
-- meeting notes
-- screenshots
-- transcripts
-- important observations
+- 文章
+- 會議紀錄
+- 截圖
+- 逐字稿
+- 重要觀察
 
-The main idea is simple:
+核心想法很簡單：
 
-1. collect raw material
-2. ask Claude App to help you organize it
-3. save the result as a wiki page
-4. keep a short index and log so the knowledge base stays easy to use
+1. 收集原始素材
+2. 請 Claude App 幫你整理
+3. 把結果存成 wiki 頁面
+4. 保持一個簡短的 index 和 log，讓知識庫一直好用
 
-## What You Do vs What Claude Does
+## 你做什麼，Claude 做什麼
 
-- You collect the source material.
-- Claude helps summarize, compare, and connect the ideas.
-- You save the result into the wiki.
-- You occasionally review the index and log.
+- 你負責收集原始素材。
+- Claude 幫你摘要、比較、串連觀念。
+- 你把結果存進 wiki。
+- 你偶爾回頭檢查 index 和 log。
 
-You do not need to start with git, CLI, or a complex setup.
+你不需要一開始就學 git、CLI，或複雜設定。
 
-## Repository Layout
+## 目錄結構
 
 - `raw/`
-  Store original material here.
+  放原始素材。
 - `wiki/`
-  Store the cleaned-up knowledge pages here.
+  放整理過的知識頁。
 - `index.md`
-  A short map of what topics exist.
+  簡短列出有哪些主題。
 - `log.md`
-  A short timeline of what changed.
+  簡短記錄哪些內容有變動。
 - `docs/`
-  Stable instructions for how to use the repo.
+  放穩定的使用說明。
 
-## Quick Start
+## 快速開始
 
-1. Put one item into `raw/inbox/` or `raw/sources/`.
-2. Open Claude App and ask it to extract the main points and follow-up questions.
-3. Save the answer as a Markdown page in `wiki/cards/` or `wiki/maps/`.
-4. Add one line to `index.md` and one line to `log.md`.
+1. 先把一份素材放進 `raw/inbox/` 或 `raw/sources/`。
+2. 打開 Claude App，請它整理重點和後續問題。
+3. 把結果存成 Markdown 頁面，放進 `wiki/cards/` 或 `wiki/maps/`。
+4. 在 `index.md` 和 `log.md` 各補一行。
 
-## Reading Order
+## 閱讀順序
 
 1. `README.md`
 2. `CLAUDE.md`
