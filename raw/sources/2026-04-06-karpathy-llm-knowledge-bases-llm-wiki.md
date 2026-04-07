@@ -1,7 +1,6 @@
 # LLM Wiki
 
 Source: https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f
-Derived note: `blog/2026-04-06-karpathy-llm-knowledge-bases/llm-wiki.md`
 Author: Andrej Karpathy @karpathy
 
 A pattern for building personal knowledge bases using LLMs.
