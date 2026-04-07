@@ -1,39 +1,57 @@
 # llm-wiki-kb
 
-An agent-friendly personal knowledge base starter for Claude App users on Mac.
+An easy-start knowledge base for non-engineers who want to use Claude App on Mac to build a personal or team wiki.
 
-This repo is built around a simple compounding loop:
+## What This Repo Is For
 
-1. capture raw sources
-2. compile them into wiki pages
-3. keep `index.md` and `log.md` updated
-4. periodically lint and revise the knowledge base
+Use this repo when you want to turn work material into something you can find again, reuse, and keep improving:
+
+- articles
+- meeting notes
+- screenshots
+- transcripts
+- important observations
+
+The main idea is simple:
+
+1. collect raw material
+2. ask Claude App to help you organize it
+3. save the result as a wiki page
+4. keep a short index and log so the knowledge base stays easy to use
+
+## What You Do vs What Claude Does
+
+- You collect the source material.
+- Claude helps summarize, compare, and connect the ideas.
+- You save the result into the wiki.
+- You occasionally review the index and log.
+
+You do not need to start with git, CLI, or a complex setup.
 
 ## Repository Layout
 
 - `raw/`
-  Unmodified source material.
+  Store original material here.
 - `wiki/`
-  Compiled knowledge pages written and maintained by the agent.
+  Store the cleaned-up knowledge pages here.
 - `index.md`
-  Content-oriented entry map for the wiki.
+  A short map of what topics exist.
 - `log.md`
-  Chronological record of ingests, revisions, and checks.
+  A short timeline of what changed.
 - `docs/`
-  Stable operating notes and workflows.
+  Stable instructions for how to use the repo.
 
 ## Quick Start
 
-1. Drop a source into `raw/inbox/` or `raw/sources/`.
-2. Ask Claude App to extract the key claims, entities, and follow-up questions.
-3. Save the result as a new or updated wiki page under `wiki/cards/` or `wiki/maps/`.
-4. Update `index.md` and append a short entry to `log.md`.
+1. Put one item into `raw/inbox/` or `raw/sources/`.
+2. Open Claude App and ask it to extract the main points and follow-up questions.
+3. Save the answer as a Markdown page in `wiki/cards/` or `wiki/maps/`.
+4. Add one line to `index.md` and one line to `log.md`.
 
 ## Reading Order
 
-1. `CLAUDE.md`
-2. `README.md`
+1. `README.md`
+2. `CLAUDE.md`
 3. `ARCHITECTURE.md`
 4. `docs/README.md`
 5. `wiki/README.md`
-
