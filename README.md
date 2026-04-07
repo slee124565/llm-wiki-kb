@@ -30,25 +30,49 @@
 
 ## 安裝與設定
 
+### 快速安裝（已有 Claude App）
+
+如果你已經安裝好 Claude Desktop App，可以直接把以下提示詞貼進 Claude Chat，讓 Claude 自動讀取這份說明文件、逐一確認環境狀態，並引導你完成所有設定步驟：
+
+```
+請從這個網址讀取安裝說明：
+https://raw.githubusercontent.com/slee124565/llm-wiki-kb/main/README.md
+
+讀完後，幫我逐步完成「安裝與設定」所有步驟。
+每個步驟請先請我在終端機執行指令確認目前狀態，再決定是否需要安裝或設定：
+
+1. 確認 gh CLI 是否已安裝（gh --version）
+2. 確認 GitHub 帳號是否已登入（gh auth status）
+3. 確認 llm-wiki-kb 是否已 clone 到本機；若尚未 clone，請引導我完成
+4. 確認 Claude Desktop App 是否已將這個資料夾設定為 Project
+
+每一步請用繁體中文說明，並等我回報結果後再進行下一步。
+```
+
+完成後，確保你可以在資料夾中看到 `raw/`、`wiki/`、`index.md` 和 `log.md`，並且 Claude Desktop App 已將它設定為 Project。
+
+---
+
 ### 1. 安裝 Claude Desktop App
 
-先在 Mac 上安裝 Claude Desktop App，並登入可用的工作帳號。
+先到 [claude.ai](https://claude.ai) 下載並安裝 Mac 版 Claude Desktop App，並登入你的 Claude 帳號。
 
 ### 2. 用 Claude Chat 協助安裝 GitHub `gh` CLI 與設定帳號
 
 如果你不熟悉終端機，可以直接在 Claude Chat 輸入：
 
-> 幫我一步一步安裝 GitHub `gh` CLI，並完成 GitHub 帳號登入。請用 Mac 的做法說明，每一步都寫得簡單一點。
+> 幫我一步一步在 Mac 上用 Homebrew 安裝 GitHub `gh` CLI，並完成 GitHub 帳號登入。每一步都請寫得簡單一點。
 
 完成後，確認你能在終端機執行 `gh --version`，以及可以順利登入 GitHub。
 
-### 3. 用 Claude Chat 協助 clone 這個 repository，並設定成 Claude cowork project root
+### 3. 用 Claude Chat 協助 clone 這個 repository，並設定成 Claude 的專案資料夾
 
-接著請 Claude Chat 指導你把這個 repo clone 到 Mac 上，並把它設定成 Claude cowork 的專案根目錄。
+接著請 Claude Chat 指導你把這個 repo clone 到 Mac 上，並在 Claude Desktop App 中把它設定為專案資料夾（Project），讓 Claude 之後能直接存取這個資料夾的內容。
 
 你可以直接貼：
 
-> 請幫我把這個 GitHub repository clone 到 Mac，並把它設定成 Claude cowork project root folder。請一步一步教我操作。
+> 請幫我把以下 GitHub repository clone 到 Mac：https://github.com/slee124565/llm-wiki-kb
+> clone 完成後，再教我怎麼在 Claude Desktop App 中把這個資料夾設定成 Project。請一步一步說明。
 
 完成後，確保你可以在這個資料夾中看到 `raw/`、`wiki/`、`index.md` 和 `log.md`。
 
