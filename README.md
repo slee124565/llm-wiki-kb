@@ -64,7 +64,7 @@
 
 請先看：
 
-- [../flh-claude-toolkit/QUICKSTART.md](../flh-claude-toolkit/QUICKSTART.md)
+- [flh-claude-toolkit QUICKSTART](https://github.com/slee124565/flh-claude-toolkit/blob/main/QUICKSTART.md)
 
 先用那份 quickstart 把工作站設好，再回來使用 `llm-wiki-kb`。
 
@@ -99,7 +99,7 @@
 
 這些內容會逐步導流到：
 
-- [../flh-claude-toolkit/QUICKSTART.md](../flh-claude-toolkit/QUICKSTART.md)
+- [flh-claude-toolkit QUICKSTART](https://github.com/slee124565/flh-claude-toolkit/blob/main/QUICKSTART.md)
 
 ## 適合什麼情境
 
@@ -121,6 +121,6 @@
 
 那你應先看：
 
-- [../flh-claude-toolkit/QUICKSTART.md](../flh-claude-toolkit/QUICKSTART.md)
+- [flh-claude-toolkit QUICKSTART](https://github.com/slee124565/flh-claude-toolkit/blob/main/QUICKSTART.md)
 
 先把工作站設好，再回來經營這個 wiki。
