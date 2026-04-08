@@ -1,5 +1,4 @@
 # Index
 
-- `wiki/cards/`
-- `wiki/maps/`
-
+- `wiki/README.md`
+- `wiki/_template.md`

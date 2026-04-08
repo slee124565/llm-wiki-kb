@@ -32,11 +32,21 @@ Out of scope:
 
 ## Test Environment
 
-- Mac
-- Claude Desktop App installed and signed in
-- GitHub account available
-- `gh` CLI installed and authenticated
-- This repository cloned locally and used as the Claude cowork project root
+Minimum environment:
+
+- this repository cloned locally
+- a Claude-compatible agent can open the repo as the working root
+
+Common environment variants:
+
+- Claude Desktop + Claude Code MCP
+- Claude Code CLI
+- Codex or another terminal-first agent workflow
+
+Not required:
+
+- a GitHub-specific CLI
+- a specific GUI path
 
 ## Success Criteria
 
@@ -69,7 +79,7 @@ Use one Claude session per case unless the case explicitly depends on an earlier
 
 ### TP-01 Bootstrap repo understanding
 
-1. Open the repo in Claude Desktop App.
+1. Open the repo in your preferred Claude-compatible agent.
 2. Ask Claude to read `README.md`, `CLAUDE.md`, and `ARCHITECTURE.md`.
 3. Ask Claude to explain the repo structure in its own words.
 4. Check that the answer mentions the four core layers: `raw/`, `wiki/`, `index.md`, and `log.md`.

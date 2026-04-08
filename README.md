@@ -1,6 +1,6 @@
 # llm-wiki-kb
 
-一個給非工程同仁使用的入門知識庫，適合在 Mac 上搭配 Claude 建立個人或團隊 wiki。
+一個適合個人或團隊使用的 LLM-friendly wiki starter repo。
 
 這個 repo 的重點不是教你把一台 Mac 設成 agent workstation，而是示範如何把工作素材整理成可持續維護的知識庫。
 
@@ -48,16 +48,33 @@
 - link
 - maintain
 
-## 先決條件
+## 使用前先選路線
 
 如果你只是想理解這個 repo 的 operating model，直接從這裡開始即可。
 
-如果你還沒完成本機環境設定，例如：
+### 路線 A：你已經有自己的本機環境
+
+這條路適合：
+
+- 工程人員
+- 已熟悉 Terminal / TUI 操作的人
+- 已有自己的 Claude Code、Codex、Gemini CLI 或其他 agent 工作流的人
+
+這種情況下，你可以直接 `git clone` 這個 repo，然後開始使用。
+
+### 路線 B：你還不熟本機工具安裝
+
+這條路適合：
+
+- 非工程同仁
+- 不熟 Terminal 的同仁
+- 不知道 Claude Desktop、Claude Code、MCP、`gws` 應該怎麼接的人
+
+如果你目前卡在這些問題：
 
 - Terminal 基本操作
 - Homebrew
 - Node.js
-- GitHub `gh` CLI
 - Claude Code CLI
 - MCP setup
 - Google Workspace `gws` CLI / MCP
@@ -72,6 +89,8 @@
 
 先讀：
 
+- [README.md](README.md)
+- [ARCHITECTURE.md](ARCHITECTURE.md)
 - [docs/ingest.md](docs/ingest.md)
 - [docs/query.md](docs/query.md)
 - [docs/lint.md](docs/lint.md)
@@ -97,7 +116,7 @@
 - CLI / MCP troubleshooting
 - agent workstation rollout SOP
 
-這些內容會逐步導流到：
+這些內容應導流到：
 
 - [flh-claude-toolkit QUICKSTART](https://github.com/slee124565/flh-claude-toolkit/blob/main/QUICKSTART.md)
 
@@ -116,7 +135,7 @@
 
 - 工具還沒裝好
 - Claude Desktop / Claude Code 不知道怎麼接
-- `gh`、`gws`、`node` 不知道先裝哪個
+- `git`、`gws`、`node` 不知道先裝哪個
 - MCP server 設定容易卡住
 
 那你應先看：
@@ -124,3 +143,5 @@
 - [flh-claude-toolkit QUICKSTART](https://github.com/slee124565/flh-claude-toolkit/blob/main/QUICKSTART.md)
 
 先把工作站設好，再回來經營這個 wiki。
+
+如果你的本機環境已經沒問題，則不需要先經過 `flh-claude-toolkit`。
