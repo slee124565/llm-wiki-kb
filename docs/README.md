@@ -2,15 +2,14 @@
 
 Store stable operating rules here.
 
-Recommended starting points:
+This docs folder should focus on wiki operating model and maintenance.
 
-- mac terminal basics
-- Homebrew setup
-- Node.js setup
-- GitHub gh CLI setup
-- Claude Code CLI setup
-- Google Workspace gws + MCP setup
-- Terminal MCP setup
+If you are looking for local environment setup, CLI installation, MCP setup, or troubleshooting, the canonical onboarding repo is:
+
+- [../../agent-workstation-starter/README.md](../../agent-workstation-starter/README.md)
+
+Current recommended starting points for `llm-wiki-kb` itself:
+
 - ingest workflow
 - query workflow
 - lint / maintenance workflow
