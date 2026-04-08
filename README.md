@@ -1,6 +1,6 @@
 # llm-wiki-kb
 
-一個給非工程同仁使用的入門知識庫，適合在 Mac 上搭配 Claude App 建立個人或團隊 wiki。
+一個給非工程同仁使用的入門知識庫，適合在 Mac 上搭配 Claude Desktop App 建立個人或團隊 wiki。
 
 ## 這個 Repo 用來做什麼
 
@@ -15,9 +15,9 @@
 核心想法很簡單：
 
 1. 收集原始素材
-2. 請 Claude App 幫你整理
+2. 請 Claude 幫你整理
 3. 把結果存成 wiki 頁面
-4. 保持一個簡短的 index 和 log，讓知識庫一直好用
+4. 保持一個簡短的 `index.md` 和 `log.md`
 
 ## 你做什麼，Claude 做什麼
 
@@ -26,55 +26,272 @@
 - 你把結果存進 wiki。
 - 你偶爾回頭檢查 index 和 log。
 
-你不需要一開始就學 git、CLI，或複雜設定。
+如果你不熟悉終端機，也可以從這份 repo 開始。建議把工作環境分成兩層：
 
-## 安裝與設定
+- `Claude Desktop App`
+  主要 GUI 介面，適合日常問答、整理文件、使用 MCP 工具
+- `Claude Code CLI`
+  終端機中的 agent，適合安裝工具、檢查環境、修改檔案、執行 step-by-step setup
 
-### 快速安裝（已有 Claude App）
+對非工程同仁來說，最實用的做法不是硬學 CLI 指令，而是先學會：
 
-如果你已經安裝好 Claude Desktop App，可以直接把以下提示詞貼進 Claude Chat，讓 Claude 自動讀取這份說明文件、逐一確認環境狀態，並引導你完成所有設定步驟：
+1. 打開 Terminal
+2. 貼上一行指令
+3. 看懂成功 / 失敗訊息
+4. 必要時把結果貼回 Claude，讓 agent 繼續帶你做
 
+## 公司 Rollout 版安裝順序
+
+這個 repo 的公司預設 rollout 路徑，採用：
+
+1. `Claude Desktop App`
+2. `Claude Code CLI`
+3. `llm-wiki-kb` local repo
+4. `Claude Code as MCP server`
+5. `Google Workspace gws CLI`
+6. `gws MCP server`
+
+這條路徑的理由是：
+
+- 先有 GUI，非工程同仁比較容易開始
+- 先補 `Claude Code CLI`，讓後續多數安裝步驟都可以由 agent 協助完成
+- 再補本地 repo，讓知識庫有固定落點
+- terminal MCP 預設不走獨立 shell server，而是直接採 `Claude Code as MCP server`
+- 最後才補 `gws`，把 Google Workspace 能力接進來
+
+詳細步驟對應文件：
+
+- [docs/mac-terminal-basics.md](docs/mac-terminal-basics.md)
+- [docs/setup-claude-code-cli.md](docs/setup-claude-code-cli.md)
+- [docs/setup-terminal-mcp.md](docs/setup-terminal-mcp.md)
+- [docs/setup-google-workspace-gws.md](docs/setup-google-workspace-gws.md)
+
+## 公司 Rollout Checklist
+
+### Stage 0: Terminal 基本操作
+
+先完成：
+
+- [docs/mac-terminal-basics.md](docs/mac-terminal-basics.md)
+
+最小驗收：
+
+- 知道怎麼打開 Terminal
+- 知道怎麼貼上一行指令
+- 知道怎麼把結果貼回 Claude
+
+### Stage 1: Claude Desktop App
+
+先到 [claude.ai](https://claude.ai) 安裝並登入 Mac 版 Claude Desktop App。
+
+最小驗收：
+
+- 可正常開啟 Claude Desktop App
+- 已登入可用帳號
+
+### Stage 2: 安裝 Claude Code CLI
+
+先完成：
+
+- [docs/setup-claude-code-cli.md](docs/setup-claude-code-cli.md)
+
+最小驗收：
+
+- `claude --version` 成功
+- `claude` 可以啟動
+- `claude doctor` 可以跑完
+
+簡易使用方式：
+
+1. 在 Terminal 進入你想工作的資料夾
+2. 執行：
+
+```bash
+claude
 ```
-請從這個網址讀取安裝說明：
-https://raw.githubusercontent.com/slee124565/llm-wiki-kb/main/README.md
 
-讀完後，幫我逐步完成「安裝與設定」所有步驟。
-每個步驟請先請我在終端機執行指令確認目前狀態，再決定是否需要安裝或設定：
+3. 直接輸入自然語言提示詞
 
-1. 確認 gh CLI 是否已安裝（gh --version）
-2. 確認 GitHub 帳號是否已登入（gh auth status）
-3. 確認 llm-wiki-kb 是否已 clone 到本機；若尚未 clone，請引導我完成
-4. 確認 Claude Desktop App 是否已將這個資料夾設定為 Project
+第一次使用可以貼這段：
 
-每一步請用繁體中文說明，並等我回報結果後再進行下一步。
+```text
+請用繁體中文陪我完成接下來的安裝。
+我對 Terminal 不熟，每次只給我一個步驟。
+每一步都要先告訴我：
+1. 我要貼哪一行指令
+2. 成功時會看到什麼
+3. 如果失敗要怎麼排查
+等我貼出結果後，你再帶我做下一步。
 ```
 
-完成後，確保你可以在資料夾中看到 `raw/`、`wiki/`、`index.md` 和 `log.md`，並且 Claude Desktop App 已將它設定為 Project。
+### Stage 3: 安裝本地 repo
 
----
+這一階段開始，建議直接讓 `Claude Code` 協助。
 
-### 1. 安裝 Claude Desktop App
+在 Terminal 先啟動：
 
-先到 [claude.ai](https://claude.ai) 下載並安裝 Mac 版 Claude Desktop App，並登入你的 Claude 帳號。
+```bash
+claude
+```
 
-### 2. 用 Claude Chat 協助安裝 GitHub `gh` CLI 與設定帳號
+再貼這段：
 
-如果你不熟悉終端機，可以直接在 Claude Chat 輸入：
+```text
+請幫我在這台 Mac 上安裝或確認 GitHub `gh` CLI，然後把 `slee124565/llm-wiki-kb` clone 到本機。
+我是非工程使用者，對 Terminal 不熟。
 
-> 幫我一步一步在 Mac 上用 Homebrew 安裝 GitHub `gh` CLI，並完成 GitHub 帳號登入。每一步都請寫得簡單一點。
+請一步一步帶我做：
+1. 先檢查 `gh --version`
+2. 如果沒有安裝，協助我安裝
+3. 再幫我 clone repo
+4. 最後幫我確認資料夾裡有 `raw/`、`wiki/`、`index.md`、`log.md`
 
-完成後，確認你能在終端機執行 `gh --version`，以及可以順利登入 GitHub。
+每一步都只給我一個動作，等我貼結果後再往下。
+```
 
-### 3. 用 Claude Chat 協助 clone 這個 repository，並設定成 Claude 的專案資料夾
+完成後，再把這個資料夾加入 Claude Desktop App 的 Project。
 
-接著請 Claude Chat 指導你把這個 repo clone 到 Mac 上，並在 Claude Desktop App 中把它設定為專案資料夾（Project），讓 Claude 之後能直接存取這個資料夾的內容。
+最小驗收：
 
-你可以直接貼：
+- repo 已 clone 到本機
+- Claude Desktop 已把此資料夾加入 Project
 
-> 請幫我把以下 GitHub repository clone 到 Mac：https://github.com/slee124565/llm-wiki-kb
-> clone 完成後，再教我怎麼在 Claude Desktop App 中把這個資料夾設定成 Project。請一步一步說明。
+### Stage 4: 用 Claude Code 當 Terminal MCP
 
-完成後，確保你可以在這個資料夾中看到 `raw/`、`wiki/`、`index.md` 和 `log.md`。
+公司預設策略採這條，不預設開獨立 terminal server。
+
+先完成：
+
+- [docs/setup-terminal-mcp.md](docs/setup-terminal-mcp.md)
+
+這一階段只採：
+
+- `Claude Code as MCP server`
+
+不採預設：
+
+- 獨立 terminal MCP server
+
+最小驗收：
+
+- Claude Desktop 已讀到 `claude mcp serve` 提供的 MCP server
+- 可以在 Claude Desktop 中請 Claude 檢查本地 repo 狀態
+
+如果要讓 Claude Code 協助你完成這一步，先在 Terminal 執行：
+
+```bash
+claude
+```
+
+再貼這段：
+
+```text
+請幫我把 Claude Code 設定成 Claude Desktop 可用的 MCP server。
+請先檢查 `claude --version`，再告訴我 Claude Desktop 的設定檔路徑。
+之後請給我完整可貼上的 `claude_desktop_config.json` 範例，內容只先包含 `Claude Code as MCP server`。
+等我貼出設定結果後，再幫我驗證下一步。
+```
+
+### Stage 5: 安裝 Google Workspace gws CLI
+
+先完成：
+
+- [docs/setup-google-workspace-gws.md](docs/setup-google-workspace-gws.md)
+
+最小驗收：
+
+- `gws --version` 成功
+- `gws auth login` 完成
+- `gws drive files list --params '{"pageSize": 3}'` 可用
+
+如果要讓 Claude Code 協助你完成這一步，先在 Terminal 執行：
+
+```bash
+claude
+```
+
+再貼這段：
+
+```text
+請幫我在這台 Mac 上安裝 Google Workspace `gws` CLI。
+我是非工程使用者，對 Terminal 不熟。
+
+請按以下順序一步一步帶我做：
+1. 先檢查 `gws --version`
+2. 如果未安裝，協助我安裝
+3. 再帶我做 `gws auth login`
+4. 最後幫我執行 `gws drive files list --params '{"pageSize": 3}'` 做驗收
+
+每一步只給我一個動作，等我貼結果後再往下。
+```
+
+### Stage 6: 把 gws 接到 Claude Desktop
+
+延續前一階段，把 `gws` MCP server 加到 `claude_desktop_config.json`。
+
+最小驗收：
+
+- Claude Desktop 可使用 `gws` MCP server
+- 可以在 Claude Desktop 問到 Drive 或 Gmail 資料
+
+如果要讓 Claude Code 協助你完成這一步，先在 Terminal 執行：
+
+```bash
+claude
+```
+
+再貼這段：
+
+```text
+請幫我把 `gws` MCP server 加到 Claude Desktop 的設定檔。
+請先檢查我目前的 `claude_desktop_config.json` 是否已包含 `Claude Code as MCP server`。
+如果沒有 `gws`，請給我一份完整、可直接貼上的 JSON，內容要同時包含：
+1. `Claude Code as MCP server`
+2. `gws` MCP server，先只開 `drive,gmail,calendar`
+
+等我貼出設定結果後，再幫我做最小驗收。
+```
+
+## Agent-Assisted Rollout Prompt
+
+如果你已經有 Claude、Codex 或 Gemini 等 agent 可以協助操作，直接貼這段：
+
+```text
+請先讀這個 repo 的 README：
+https://github.com/slee124565/llm-wiki-kb/blob/main/README.md
+
+我要依照這個 repo 的「公司 rollout 版安裝順序」完成 setup。
+我是 Mac 上的非工程使用者，對 Terminal 不熟。
+
+請用繁體中文一步一步帶我完成，嚴格依照下面順序，不要跳步：
+
+1. Terminal 基本操作
+2. Claude Desktop App 安裝與登入
+3. 安裝 Claude Code CLI
+4. clone `llm-wiki-kb` repo 並加入 Claude Desktop Project
+5. 用 `Claude Code as MCP server` 接到 Claude Desktop
+6. 安裝 Google Workspace `gws` CLI
+7. 完成 `gws auth login`
+8. 把 `gws` MCP server 接到 Claude Desktop
+9. 最後做一次完整驗收
+
+請遵守以下方式：
+- 每一步先叫我執行一個檢查或安裝動作
+- 等我貼出結果後，再進下一步
+- 如果要改設定檔，請先告訴我路徑，再給我完整內容
+- terminal MCP 預設只走 `Claude Code as MCP server`
+- 如果有失敗，先排查再往下
+
+每一步都要告訴我：
+- 我要在哪裡按
+- 要貼哪一行指令
+- 成功時會看到什麼
+- 失敗時該怎麼排查
+```
+
+### Claude Desktop App
+
+先到 [claude.ai](https://claude.ai) 下載並安裝 Mac 版 Claude Desktop App，登入你的 Claude 帳號。
 
 ## 目錄結構
 
@@ -138,12 +355,27 @@ https://raw.githubusercontent.com/slee124565/llm-wiki-kb/main/README.md
 - `這些文件之間有沒有重複、衝突或缺漏？`
 - `根據目前資料，下一步我應該先問什麼問題？`
 
-## 快速開始
+## 日常使用建議
 
-1. 先把一份素材放進 `raw/inbox/` 或 `raw/sources/`。
-2. 打開 Claude App，請它整理重點和後續問題。
-3. 把結果存成 Markdown 頁面，放進 `wiki/`。
-4. 在 `index.md` 和 `log.md` 各補一行。
+建議把這個 repo 當成「本地工作資料庫」：
+
+1. 先把一份素材放進 `raw/inbox/` 或 `raw/sources/`
+2. 打開 Claude Desktop App，請它整理重點和後續問題
+3. 把結果存成 Markdown 頁面，放進 `wiki/`
+4. 在 `index.md` 和 `log.md` 各補一行
+
+如果你已經裝好 `gws` CLI + MCP，還可以直接在 Claude Desktop 裡請 Claude：
+
+- 幫你找 Google Drive 某份文件
+- 幫你整理 Gmail thread 的重點
+- 幫你從 Calendar / Drive / Gmail 回收可寫進 wiki 的內容
+
+如果你已裝好 Claude Code CLI，還可以請 agent 協助：
+
+- 檢查 repo 結構是否完整
+- 幫你建立新 wiki 頁面
+- 幫你更新 `index.md` 與 `log.md`
+- 幫你驗證某個 setup 是否成功
 
 ## 閱讀順序
 
