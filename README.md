@@ -64,7 +64,7 @@
 
 請先看：
 
-- [../agent-workstation-starter/README.md](../agent-workstation-starter/README.md)
+- [../flh-claude-toolkit/README.md](../flh-claude-toolkit/README.md)
 
 那個 repo 專門承接 non-engineer 的 agent workstation onboarding 與 troubleshooting。
 
@@ -99,7 +99,7 @@
 
 這些內容會逐步導流到：
 
-- [../agent-workstation-starter/README.md](../agent-workstation-starter/README.md)
+- [../flh-claude-toolkit/README.md](../flh-claude-toolkit/README.md)
 
 ## 適合什麼情境
 
@@ -121,6 +121,6 @@
 
 那你應先看：
 
-- [../agent-workstation-starter/README.md](../agent-workstation-starter/README.md)
+- [../flh-claude-toolkit/README.md](../flh-claude-toolkit/README.md)
 
 先把工作站設好，再回來經營這個 wiki。
