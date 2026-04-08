@@ -62,10 +62,29 @@ Control + C
 ### 檢查工具有沒有裝好
 
 ```bash
+brew --version
+node --version
+npm --version
+npx --version
 claude --version
 gws --version
 gh --version
 ```
+
+如果工具有問題，可以直接看這些對應文件：
+
+- `brew --version` 失敗：
+  [setup-homebrew.md](setup-homebrew.md)
+- `node --version`、`npm --version`、`npx --version` 失敗：
+  [setup-nodejs.md](setup-nodejs.md)
+- `claude --version` 失敗：
+  [setup-claude-code-cli.md](setup-claude-code-cli.md)
+- `gws --version` 失敗：
+  [setup-google-workspace-gws.md](setup-google-workspace-gws.md)
+- `claude` 已安裝，但 Claude Desktop 裡的 terminal / MCP 能力還不能用：
+  [setup-terminal-mcp.md](setup-terminal-mcp.md)
+- `gh --version` 失敗：
+  [setup-github-gh-cli.md](setup-github-gh-cli.md)
 
 ### 看目前在哪個資料夾
 

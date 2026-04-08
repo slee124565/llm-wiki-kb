@@ -45,15 +45,17 @@
 這個 repo 的公司預設 rollout 路徑，採用：
 
 1. `Claude Desktop App`
-2. `Claude Code CLI`
-3. `llm-wiki-kb` local repo
-4. `Claude Code as MCP server`
-5. `Google Workspace gws CLI`
-6. `gws MCP server`
+2. `Node.js` local runtime
+3. `Claude Code CLI`
+4. `llm-wiki-kb` local repo
+5. `Claude Code as MCP server`
+6. `Google Workspace gws CLI`
+7. `gws MCP server`
 
 這條路徑的理由是：
 
 - 先有 GUI，非工程同仁比較容易開始
+- 先補本機 `Node.js`，後面很多 CLI / MCP 工具才有共同 runtime
 - 先補 `Claude Code CLI`，讓後續多數安裝步驟都可以由 agent 協助完成
 - 再補本地 repo，讓知識庫有固定落點
 - terminal MCP 預設不走獨立 shell server，而是直接採 `Claude Code as MCP server`
@@ -62,6 +64,9 @@
 詳細步驟對應文件：
 
 - [docs/mac-terminal-basics.md](docs/mac-terminal-basics.md)
+- [docs/setup-homebrew.md](docs/setup-homebrew.md)
+- [docs/setup-nodejs.md](docs/setup-nodejs.md)
+- [docs/setup-github-gh-cli.md](docs/setup-github-gh-cli.md)
 - [docs/setup-claude-code-cli.md](docs/setup-claude-code-cli.md)
 - [docs/setup-terminal-mcp.md](docs/setup-terminal-mcp.md)
 - [docs/setup-google-workspace-gws.md](docs/setup-google-workspace-gws.md)
@@ -89,7 +94,22 @@
 - 可正常開啟 Claude Desktop App
 - 已登入可用帳號
 
-### Stage 2: 安裝 Claude Code CLI
+### Stage 2: 安裝 Node.js
+
+先完成：
+
+- [docs/setup-homebrew.md](docs/setup-homebrew.md)
+- [docs/setup-nodejs.md](docs/setup-nodejs.md)
+
+最小驗收：
+
+- `node --version` 成功
+- `npm --version` 成功
+- `npx --version` 成功
+
+這一步很重要，因為後面很多 CLI / MCP 工具都會依賴這台 Mac 本機先具備 Node.js 工具鏈。
+
+### Stage 3: 安裝 Claude Code CLI
 
 先完成：
 
@@ -124,9 +144,14 @@ claude
 等我貼出結果後，你再帶我做下一步。
 ```
 
-### Stage 3: 安裝本地 repo
+### Stage 4: 安裝本地 repo
 
 這一階段開始，建議直接讓 `Claude Code` 協助。
+
+先完成：
+
+- [docs/setup-homebrew.md](docs/setup-homebrew.md)
+- [docs/setup-github-gh-cli.md](docs/setup-github-gh-cli.md)
 
 在 Terminal 先啟動：
 
@@ -153,10 +178,11 @@ claude
 
 最小驗收：
 
+- `gh --version` 成功
 - repo 已 clone 到本機
 - Claude Desktop 已把此資料夾加入 Project
 
-### Stage 4: 用 Claude Code 當 Terminal MCP
+### Stage 5: 用 Claude Code 當 Terminal MCP
 
 公司預設策略採這條，不預設開獨立 terminal server。
 
@@ -192,10 +218,11 @@ claude
 等我貼出設定結果後，再幫我驗證下一步。
 ```
 
-### Stage 5: 安裝 Google Workspace gws CLI
+### Stage 6: 安裝 Google Workspace gws CLI
 
 先完成：
 
+- [docs/setup-homebrew.md](docs/setup-homebrew.md)
 - [docs/setup-google-workspace-gws.md](docs/setup-google-workspace-gws.md)
 
 最小驗收：
@@ -225,7 +252,7 @@ claude
 每一步只給我一個動作，等我貼結果後再往下。
 ```
 
-### Stage 6: 把 gws 接到 Claude Desktop
+### Stage 7: 把 gws 接到 Claude Desktop
 
 延續前一階段，把 `gws` MCP server 加到 `claude_desktop_config.json`。
 

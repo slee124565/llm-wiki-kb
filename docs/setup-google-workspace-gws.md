@@ -102,6 +102,10 @@ gws --version
 npm install -g @googleworkspace/cli
 ```
 
+如果你的電腦還沒有 Homebrew，先看：
+
+- [setup-homebrew.md](setup-homebrew.md)
+
 ## Step By Step 登入
 
 ### 路線 A：公司已提供 OAuth client
